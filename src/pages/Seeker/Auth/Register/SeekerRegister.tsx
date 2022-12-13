@@ -24,77 +24,26 @@ const SeekerRegister: React.FC = () => {
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle>Kendinden Bahset</IonTitle>
+            {/* <IonTitle>Kendinden Bahset</IonTitle> */}
           </IonToolbar>
         </IonHeader>
 
         <IonList>
-          <IonItem>
-            <IonLabel position="stacked">İsim</IonLabel>
-            <IonInput></IonInput>
-          </IonItem>
-
-          <IonItem>
-            <IonLabel position="stacked">Soyisim</IonLabel>
-            <IonInput></IonInput>
-          </IonItem>
-
           <IonItem>
             <IonLabel position="stacked">Email </IonLabel>
             <IonInput type="email"></IonInput>
           </IonItem>
 
           <IonItem>
-            <IonLabel position="stacked">Adres</IonLabel>
-            <IonInput></IonInput>
+            <IonLabel position="stacked">Şifre</IonLabel>
+            <IonInput type="password"></IonInput>
           </IonItem>
 
-          <IonItem>
-            <IonLabel position="stacked">Posta Kodu</IonLabel>
-            <IonInput></IonInput>
-          </IonItem>
-
-          <IonItem>
-            <IonLabel position="stacked">Telefon Numarası</IonLabel>
-            <IonInput type="tel"></IonInput>
-          </IonItem>
           <div className="ion-activatable ripple-parent rounded-rectangle">
-        <IonRippleEffect></IonRippleEffect>
-      </div>
-
-
-
-          <IonButton style={{ marginTop: '20px' }} fill="outline" expand="block" onClick={() => setClick(click => !click)}>
-            + Ek Bilgiler
-          </IonButton>
-          {click ?
-            <IonList>
-              <IonItem>
-                <IonLabel position="stacked">Sürücü Ehliyeti</IonLabel>
-                <IonInput></IonInput>
-              </IonItem>
-              <IonItem>
-                <IonLabel position="stacked">Medeni Durum</IonLabel>
-                <IonInput></IonInput>
-              </IonItem>
-              <IonItem>
-                <IonLabel position="stacked">Cinsiyet</IonLabel>
-                <IonSelect placeholder="Seçiniz">
-                  <IonSelectOption value="man">Erkek</IonSelectOption>
-                  <IonSelectOption value="woman">Kadın</IonSelectOption>
-                </IonSelect>
-              </IonItem>
-              <IonItem>
-                <IonLabel position="stacked">Doğum Tarihi</IonLabel>
-                <IonInput type="date"></IonInput>
-              </IonItem>
-            </IonList>
-            :
-            click
-          }
-
-
+            <IonRippleEffect></IonRippleEffect>
+          </div>
         </IonList>
+
         <IonInfiniteScrollContent></IonInfiniteScrollContent>
       </IonContent>
       <div className="buttonCont">

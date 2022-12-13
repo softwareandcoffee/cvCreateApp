@@ -15,7 +15,8 @@ const Home: React.FC = () => {
                     <IonRow style={{ height: '50%' }}>
                         <IonCol style={{ margin: '0px', padding: '0px' }}>
                             <div className='homeBox employee'>
-                                <span>İş Veren</span>
+                             {/* <span>İş Veren</span> */}
+                                <Link to="/seekerAuth">İş Veren</Link>
 
                             </div>
                         </IonCol>
