@@ -14,11 +14,14 @@ import {
     IonInput,
     IonList, IonSelect, IonSelectOption,
     IonRippleEffect,
+    IonText ,
   } from "@ionic/react";
   import { useState } from "react";
   
   const cv: React.FC = () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [click, setClick] = useState(false);
+
     return (
       <IonPage className="SeekerRegisterPage">
         <IonContent>
@@ -30,17 +33,17 @@ import {
   
           <IonList>
             <IonItem>
-              <IonLabel position="stacked">İsim</IonLabel>
+              <IonLabel position="stacked">İsim<IonText color="danger">*</IonText></IonLabel>
               <IonInput></IonInput>
             </IonItem>
   
             <IonItem>
-              <IonLabel position="stacked">Soyisim</IonLabel>
+              <IonLabel position="stacked">Soyisim<IonText color="danger">*</IonText></IonLabel>
               <IonInput></IonInput>
             </IonItem>
   
             <IonItem>
-              <IonLabel position="stacked">Email </IonLabel>
+              <IonLabel position="stacked">Email <IonText color="danger">*</IonText></IonLabel>
               <IonInput type="email"></IonInput>
             </IonItem>
   

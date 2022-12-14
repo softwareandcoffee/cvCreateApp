@@ -16,6 +16,7 @@ import {
   IonRippleEffect,
 } from "@ionic/react";
 import { useState } from "react";
+import Main from "../../Mainpage/Main";
 
 const SeekerRegister: React.FC = () => {
   const [click, setClick] = useState(false);
@@ -36,7 +37,9 @@ const SeekerRegister: React.FC = () => {
 
           <IonItem>
             <IonLabel position="stacked">Şifre</IonLabel>
-            <IonInput type="password"></IonInput>
+
+            <IonInput type="password"  ></IonInput>
+
           </IonItem>
 
           <div className="ion-activatable ripple-parent rounded-rectangle">
@@ -45,10 +48,12 @@ const SeekerRegister: React.FC = () => {
         </IonList>
 
         <IonInfiniteScrollContent></IonInfiniteScrollContent>
+
+        <div className="buttonCont">
+          <IonButton shape="round" expand="block">Giriş Yap</IonButton>
+        </div>
+     
       </IonContent>
-      <div className="buttonCont">
-        <IonButton shape="round" expand="block">Devam</IonButton>
-      </div>
     </IonPage>
   );
 };

@@ -8,47 +8,53 @@ import {
   IonLabel,
   IonInput,
   IonItem,
-  IonButton
+  IonButton,   
+  IonText,     
+  IonInfiniteScrollContent,   
 } from "@ionic/react";
 import "./SeekerLogin.scss";
 
-import { useState } from "react";
+
 
 const SeekerLogin: React.FC = () => {
-  const [click, setClick] = useState(false);
+
   return (
     <IonPage className="SeekerLogin">
       <IonContent>
+        
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle>SeekerLogin</IonTitle>
           </IonToolbar>
           </IonHeader>
-          <IonList>
+         
+          <IonList lines="full" >
 
             <IonItem>
-              <IonLabel position="stacked" >isim</IonLabel>
+              <IonLabel position="stacked" >isim <IonText color="danger">*</IonText></IonLabel>
               <IonInput></IonInput>
             </IonItem>
 
             <IonItem>
-              <IonLabel position="stacked">Soyisim</IonLabel>
+              <IonLabel position="stacked">Soyisim <IonText color="danger">*</IonText></IonLabel>
               <IonInput></IonInput>
             </IonItem>
 
             <IonItem>
-              <IonLabel position="stacked">Email </IonLabel>
+              <IonLabel position="stacked"  >Email  <IonText color="danger">*</IonText> </IonLabel>
               <IonInput type="email"></IonInput>
             </IonItem>
             <IonItem>
-              <IonLabel position="stacked"> Şifre </IonLabel>
+              <IonLabel position="stacked"> Şifre  <IonText color="danger">*</IonText></IonLabel>
               <IonInput type="password"></IonInput>
             </IonItem>
 
 
           </IonList>
-
-          <IonButton shape="round" expand="block">Devam</IonButton>
+          <IonInfiniteScrollContent></IonInfiniteScrollContent>
+          <div className="buttonCont">
+          <IonButton shape="round" expand="block">Giriş Yap</IonButton>
+        </div>
 
 
 
@@ -57,5 +63,10 @@ const SeekerLogin: React.FC = () => {
     </IonPage>
   );
 };
+   
+  
 
+  
 export default SeekerLogin;
+
+
