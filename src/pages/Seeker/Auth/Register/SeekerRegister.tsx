@@ -7,19 +7,22 @@ import {
   IonInfiniteScrollContent
 } from "@ionic/react";
 import "./SeekerRegister.scss";
+
 import {
   IonButton,
   IonLabel,
   IonItem,
   IonInput,
-  IonList, IonSelect, IonSelectOption,
+  IonList, 
   IonRippleEffect,
+ 
 } from "@ionic/react";
 import { useState } from "react";
-import Main from "../../Mainpage/Main";
+
 
 const SeekerRegister: React.FC = () => {
   const [click, setClick] = useState(false);
+
   return (
     <IonPage className="SeekerRegisterPage">
       <IonContent>
@@ -50,10 +53,14 @@ const SeekerRegister: React.FC = () => {
         <IonInfiniteScrollContent></IonInfiniteScrollContent>
 
         <div className="buttonCont">
-          <IonButton shape="round" expand="block">Giriş Yap</IonButton>
+          <IonButton shape="round" expand="block" onClick={() => setClick(true)}>Giriş Yap</IonButton>
         </div>
-     
-      </IonContent>
+
+
+  
+
+
+            </IonContent>
     </IonPage>
   );
 };

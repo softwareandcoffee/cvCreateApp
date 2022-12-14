@@ -35,6 +35,7 @@ import EmployerRegister from './pages/Employer/Auth/Register/EmployerRegister';
 //Home
 import Home from './pages/Home/Home';
 import SeekerAuth from './pages/Seeker/Auth';
+import SeekerMainPage from './pages/Seeker/SeekerMainPage/SeekerMainPage';
 
 
 setupIonicReact();
@@ -63,6 +64,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/EmployerRegister">
           <EmployerRegister />
+        </Route>
+        <Route exact path="/SeekerMainPage">
+          <SeekerMainPage/>
         </Route>
         <Route  exact path="/">
           <Redirect to="/Home" />
