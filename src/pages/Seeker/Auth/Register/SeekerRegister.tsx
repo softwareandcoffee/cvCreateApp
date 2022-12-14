@@ -4,7 +4,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonInfiniteScrollContent
+  IonInfiniteScrollContent,
 } from "@ionic/react";
 import "./SeekerRegister.scss";
 
@@ -13,54 +13,48 @@ import {
   IonLabel,
   IonItem,
   IonInput,
-  IonList, 
+  IonList,
   IonRippleEffect,
- 
 } from "@ionic/react";
 import { useState } from "react";
-
 
 const SeekerRegister: React.FC = () => {
   const [click, setClick] = useState(false);
 
   return (
-    <IonPage className="SeekerRegisterPage">
+    <IonPage className="SeekerRegister">
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            {/* <IonTitle>Kendinden Bahset</IonTitle> */}
-          </IonToolbar>
-        </IonHeader>
+        <IonInfiniteScrollContent>
+          <IonList lines="full">
+            <IonItem class="custom-item">
+              <IonLabel position="stacked" className="label">
+                İsim
+              </IonLabel>
+              <IonInput></IonInput>
+            </IonItem>
 
-        <IonList>
-          <IonItem>
-            <IonLabel position="stacked">Email </IonLabel>
-            <IonInput type="email"></IonInput>
-          </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Soyisim</IonLabel>
+              <IonInput></IonInput>
+            </IonItem>
 
-          <IonItem>
-            <IonLabel position="stacked">Şifre</IonLabel>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Email</IonLabel>
+              <IonInput type="email"></IonInput>
+            </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked"> Şifre </IonLabel>
+              <IonInput type="password"></IonInput>
+            </IonItem>
+          </IonList>
+        </IonInfiniteScrollContent>
 
-            <IonInput type="password"  ></IonInput>
-
-          </IonItem>
-
-          <div className="ion-activatable ripple-parent rounded-rectangle">
-            <IonRippleEffect></IonRippleEffect>
-          </div>
-        </IonList>
-
-        <IonInfiniteScrollContent></IonInfiniteScrollContent>
-
-        <div className="buttonCont">
-          <IonButton shape="round" expand="block" onClick={() => setClick(true)}>Giriş Yap</IonButton>
+        <div className="btn-container">
+          <IonButton shape="round" className="btn-next">
+            Devam
+          </IonButton>
         </div>
-
-
-  
-
-
-            </IonContent>
+      </IonContent>
     </IonPage>
   );
 };

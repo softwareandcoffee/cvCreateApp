@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import "./Home.scss";
 
+
 const Home: React.FC = () => {
     return (
         <IonPage>
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
                         <IonCol style={{ margin: '0px', padding: '0px' }}>
                             <div className='homeBox employee'>
                              {/* <span>İş Veren</span> */}
-                                <Link to="/seekerAuth">İş Veren</Link>
+                                <Link to="/seekerAuth" className='text'>İş Veren</Link>
 
                             </div>
                         </IonCol>
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
                     <IonRow style={{ height: '50%' }}>
                         <IonCol style={{ margin: '0px', padding: '0px' }}>
                             <div className='homeBox searcher'>
-                                <Link to="/seekerAuth">İş Arıyorum</Link>
+                                <Link to="/seekerAuth" className='text'>İş Arıyorum</Link>
                             </div>
                         </IonCol>
                     </IonRow>

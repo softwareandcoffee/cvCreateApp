@@ -8,65 +8,45 @@ import {
   IonLabel,
   IonInput,
   IonItem,
-  IonButton,   
-  IonText,     
-  IonInfiniteScrollContent,   
+  IonButton,
+  IonText,
+  IonInfiniteScrollContent,
+  IonRippleEffect,
 } from "@ionic/react";
 import "./SeekerLogin.scss";
 
-
-
 const SeekerLogin: React.FC = () => {
-
   return (
-    <IonPage className="SeekerLogin">
+    <IonPage className="SeekerRegisterPage">
       <IonContent>
-        
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle>SeekerLogin</IonTitle>
-          </IonToolbar>
-          </IonHeader>
-         
-          <IonList lines="full" >
+        <IonInfiniteScrollContent>
+        <IonList>
+          <IonItem class="custom-item">
+            <IonLabel position="stacked">Email </IonLabel>
+            <IonInput type="email"></IonInput>
+          </IonItem>
 
-            <IonItem>
-              <IonLabel position="stacked" >isim <IonText color="danger">*</IonText></IonLabel>
-              <IonInput></IonInput>
-            </IonItem>
+          <IonItem class="custom-item">
+            <IonLabel position="stacked">Şifre</IonLabel>
 
-            <IonItem>
-              <IonLabel position="stacked">Soyisim <IonText color="danger">*</IonText></IonLabel>
-              <IonInput></IonInput>
-            </IonItem>
+            <IonInput type="password"></IonInput>
+          </IonItem>
 
-            <IonItem>
-              <IonLabel position="stacked"  >Email  <IonText color="danger">*</IonText> </IonLabel>
-              <IonInput type="email"></IonInput>
-            </IonItem>
-            <IonItem>
-              <IonLabel position="stacked"> Şifre  <IonText color="danger">*</IonText></IonLabel>
-              <IonInput type="password"></IonInput>
-            </IonItem>
+          <div className="ion-activatable ripple-parent rounded-rectangle">
+            <IonRippleEffect></IonRippleEffect>
+          </div>
+        </IonList>
 
+        </IonInfiniteScrollContent>
 
-          </IonList>
-          <IonInfiniteScrollContent></IonInfiniteScrollContent>
-          <div className="buttonCont">
-          <IonButton shape="round" expand="block">Giriş Yap</IonButton>
+        <div className="buttonCont">
+          <IonButton shape="round" expand="block">
+            Giriş Yap
+          </IonButton>
         </div>
-
-
-
-       
       </IonContent>
     </IonPage>
   );
 };
-   
-  
 
-  
 export default SeekerLogin;
-
-
