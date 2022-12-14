@@ -43,28 +43,28 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/Home">
+        <Route exact path="/Home">
           <Home />
         </Route>
         
 
-        <Route path="/seekerAuth">
+        <Route exact path="/seekerAuth">
           <SeekerAuth />
         </Route>
 
-        <Route path="/seekerLogin">
+        <Route exact path="/seekerLogin">
           <SeekerLogin />
         </Route>
-        <Route path="/seekerRegister">
+        <Route exact path="/seekerRegister">
           <SeekerRegister />
         </Route>
-        <Route path="/EmployerLogin">
+        <Route exact path="/EmployerLogin">
           <EmployerLogin />
         </Route>
-        <Route path="/EmployerRegister">
+        <Route exact path="/EmployerRegister">
           <EmployerRegister />
         </Route>
-        <Route exact path="/">
+        <Route  exact path="/">
           <Redirect to="/Home" />
         </Route>
       </IonRouterOutlet>
