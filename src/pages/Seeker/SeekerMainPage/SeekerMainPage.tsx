@@ -1,10 +1,16 @@
-import React from 'react'
+import { IonContent, IonPage } from "@ionic/react";
+import React from "react";
+
+import "./SeekerMainPage.scss";
 
 const SeekerMainPage: React.FC = () => {
-  alert('anasayfa')
   return (
-    <div>Ana Sayfa</div>
-  )
-}
+    <IonPage className="SeekerRegisterPage">
+      <IonContent>
+        <div>Anasayfa Seeker</div>
+      </IonContent>
+    </IonPage>
+  );
+};
 
-export default SeekerMainPage
+export default SeekerMainPage;
