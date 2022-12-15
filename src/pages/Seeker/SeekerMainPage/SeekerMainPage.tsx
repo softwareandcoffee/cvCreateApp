@@ -5,7 +5,7 @@ import "./SeekerMainPage.scss";
 
 const SeekerMainPage: React.FC = () => {
   return (
-    <IonPage className="SeekerRegisterPage">
+    <IonPage className="SeekerMainPage">
       <IonContent>
         <div>Anasayfa Seeker</div>
       </IonContent>
