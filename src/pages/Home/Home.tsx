@@ -1,5 +1,12 @@
-import { IonCol, IonGrid, IonRow, IonContent, IonPage } from "@ionic/react";
-import { Link } from "react-router-dom";
+import {
+  IonCol,
+  IonGrid,
+  IonRow,
+  IonContent,
+  IonPage,
+  IonButton,
+} from "@ionic/react";
+import { Link, Route } from "react-router-dom";
 
 import "./Home.scss";
 
@@ -13,9 +20,18 @@ const Home: React.FC = () => {
               <div className="homeBox employee">
                 <div className="first-text">Eleman mı arıyorsun?</div>
                 <div className="second-text">Ücretsiz ilan yayınla</div>
-                <Link to="/seekerAuth" className="link-text">
-                  Eleman Arıyorum
-                </Link>
+                <Route
+                  render={({ history }) => (
+                    <IonButton
+                      onClick={() => {
+                        history.push("/seekerAuth");
+                      }}
+                      className="link-text"
+                    >
+                      Eleman Arıyorum
+                    </IonButton>
+                  )}
+                />
               </div>
             </IonCol>
           </IonRow>
@@ -24,9 +40,18 @@ const Home: React.FC = () => {
               <div className="homeBox searcher">
                 <div className="first-text">İş mi arıyorsun?</div>
                 <div className="second-text">Sana uygun işi hemen bul</div>
-                <Link to="/seekerAuth" className="link-text">
-                  İş Arıyorum
-                </Link>
+                <Route
+                  render={({ history }) => (
+                    <IonButton
+                      onClick={() => {
+                        history.push("/seekerAuth");
+                      }}
+                      className="link-text"
+                    >
+                      İş Arıyorum
+                    </IonButton>
+                  )}
+                />
               </div>
             </IonCol>
           </IonRow>

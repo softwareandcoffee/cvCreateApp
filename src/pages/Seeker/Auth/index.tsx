@@ -8,6 +8,7 @@ import {
   IonToolbar,
   IonSlides,
   IonSlide,
+  IonButton,
 } from "@ionic/react";
 import { useState } from "react";
 
@@ -22,22 +23,40 @@ const SeekerAuth: React.FC = () => {
     <IonPage className="index-auth">
       <IonContent>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonSegment>
-              <IonSegmentButton
-                value="default"
-                onClick={() => setIsLogin(true)}
-              >
-                <IonLabel>Giriş Yap</IonLabel>
-              </IonSegmentButton>
-              <IonSegmentButton
-                value="segment"
-                onClick={() => setIsLogin(false)}
-              >
-                <IonLabel>Kayıt Ol</IonLabel>
-              </IonSegmentButton>
-            </IonSegment>
-          </IonToolbar>
+          <div className="seg-content">
+            {isLogin ? (
+              <>
+                {" "}
+                <div
+                  className="segment-btn-new segment-btn-new-selected"
+                  onClick={() => setIsLogin(true)}
+                >
+                  Giriş Yap
+                </div>
+                <div
+                  className="segment-btn-new"
+                  onClick={() => setIsLogin(false)}
+                >
+                  Kayıt Ol
+                </div>{" "}
+              </>
+            ) : (
+              <>
+                <div
+                  className="segment-btn-new"
+                  onClick={() => setIsLogin(true)}
+                >
+                  Giriş Yap
+                </div>
+                <div
+                  className="segment-btn-new segment-btn-new-selected"
+                  onClick={() => setIsLogin(false)}
+                >
+                  Kayıt Ol
+                </div>{" "}
+              </>
+            )}
+          </div>
         </IonHeader>
 
         <IonSlides>
