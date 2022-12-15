@@ -28,6 +28,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "react-moment": "^1.1.2",
     "react-native-shared-preferences": "^0.0.8",
     "react-places-autocomplete": "^7.3.0",
     "react-router": "^5.2.0",

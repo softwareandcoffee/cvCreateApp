@@ -33,6 +33,7 @@ import Home from "./pages/Home/Home";
 import SeekerAuth from "./pages/Seeker/Auth";
 import SeekerMainPage from "./pages/Seeker/SeekerMainPage/SeekerMainPage";
 import Profile from "./pages/Profile/Profile";
+import Cv from "./pages/Seeker/CreateCv/Cv";
 
 setupIonicReact();
 
@@ -63,6 +64,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/Profile">
           <Profile />
+        </Route>
+        <Route exact path="/Cv">
+          <Cv/>
         </Route>
         <Route exact path="/">
           <Redirect to="/Home" />

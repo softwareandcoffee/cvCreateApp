@@ -45,12 +45,12 @@ const RecommendationJobsCart: React.FC = () => {
         {recomendation_jobs_list.map((job) => (
           <div className="recomendation-list">
             <div className="company-logo">
-              <IonImg class="img" src={job?.company_logo} />
+              <IonImg  class="img" src={job?.company_logo} />
             </div>
             <div className="inside">
-              <div className="company">{job?.company_name}</div>
-              <div className="title">{job?.job_title}</div>
-              <div className="published">{job?.published}</div>
+              <div className="company" >{job?.company_name}</div>
+              <div className="title"  >{job?.job_title}</div>
+              <div className="published" >{job?.published}</div>
             </div>
             <div className="btn">
               <IonIcon icon={searchOutline}></IonIcon>

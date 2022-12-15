@@ -6,7 +6,7 @@ import {
     IonToolbar,
     IonInfiniteScrollContent
   } from "@ionic/react";
-  import "./SeekerRegister.scss";
+  import "./Cv.scss";
   import {
     IonButton,
     IonLabel,
@@ -17,6 +17,8 @@ import {
     IonText ,
   } from "@ionic/react";
   import { useState } from "react";
+import Header from "../../../layouts/Header/Header";
+
   
   const cv: React.FC = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -26,34 +28,32 @@ import {
       <IonPage className="SeekerRegisterPage">
         <IonContent>
           <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle>Kendinden Bahset</IonTitle>
-            </IonToolbar>
+               <Header/>
           </IonHeader>
   
           <IonList>
-            <IonItem>
-              <IonLabel position="stacked">İsim<IonText color="danger">*</IonText></IonLabel>
+            <IonItem  class="custom-item">
+              <IonLabel position="stacked">İsim</IonLabel>
               <IonInput></IonInput>
             </IonItem>
   
-            <IonItem>
-              <IonLabel position="stacked">Soyisim<IonText color="danger">*</IonText></IonLabel>
+            <IonItem  class="custom-item">
+              <IonLabel position="stacked" >Soyisim</IonLabel>
               <IonInput></IonInput>
             </IonItem>
   
-            <IonItem>
-              <IonLabel position="stacked">Email <IonText color="danger">*</IonText></IonLabel>
+            <IonItem  class="custom-item">
+              <IonLabel position="stacked" >Email </IonLabel>
               <IonInput type="email"></IonInput>
             </IonItem>
   
-            <IonItem>
+            <IonItem  class="custom-item">
               <IonLabel position="stacked">Adres</IonLabel>
               <IonInput></IonInput>
             </IonItem>
   
-            <IonItem>
-              <IonLabel position="stacked">Telefon Numarası</IonLabel>
+            <IonItem  class="custom-item">
+              <IonLabel position="stacked" >Telefon Numarası</IonLabel>
               <IonInput type="tel"></IonInput>
             </IonItem>
             <div className="ion-activatable ripple-parent rounded-rectangle">
@@ -67,22 +67,22 @@ import {
             </IonButton>
             {click ?
               <IonList>
-                <IonItem>
-                  <IonLabel position="stacked">Sürücü Ehliyeti</IonLabel>
+                <IonItem  class="custom-item">
+                  <IonLabel position="stacked" >Sürücü Ehliyeti</IonLabel>
                   <IonInput></IonInput>
                 </IonItem>
-                <IonItem>
-                  <IonLabel position="stacked">Medeni Durum</IonLabel>
+                <IonItem  class="custom-item">
+                  <IonLabel position="stacked" >Medeni Durum</IonLabel>
                   <IonInput></IonInput>
                 </IonItem>
-                <IonItem>
+                <IonItem  class="custom-item">
                   <IonLabel position="stacked">Cinsiyet</IonLabel>
                   <IonSelect placeholder="Seçiniz">
                     <IonSelectOption value="man">Erkek</IonSelectOption>
                     <IonSelectOption value="woman">Kadın</IonSelectOption>
                   </IonSelect>
                 </IonItem>
-                <IonItem>
+                <IonItem  class="custom-item">
                   <IonLabel position="stacked">Doğum Tarihi</IonLabel>
                   <IonInput type="date"></IonInput>
                 </IonItem>

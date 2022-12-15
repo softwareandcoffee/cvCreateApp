@@ -9,10 +9,11 @@ import {
 } from "@ionic/react";
 import React from "react";
 import Header from "../../layouts/Header/Header";
-
+import { useHistory } from "react-router-dom";
 import "./Profile.scss";
 
 const Profile: React.FC = () => {
+  const history = useHistory();
   return (
     <IonPage className="Profile">
       <IonHeader>
@@ -29,7 +30,7 @@ const Profile: React.FC = () => {
         </IonItem>
 
         <div className="btn-area">
-          <div className="logout-btn">Çıkış</div>
+          <div className="logout-btn" onClick={()=>history.push('/SeekerAuth')}>Çıkış</div>
         </div>
       </IonContent>
 
