@@ -3,6 +3,7 @@ import React from "react";
 
 import "./SeekerMainPage.scss";
 import CvBoxComponent from "./_partials/CvBoxComponent/cvBoxComponent";
+import RecommendationJobsCart from "./_partials/RecommendationJobsCart/recommendationJobsCart";
 import WelcomeCart from "./_partials/WelcomeCart/welcomeCart";
 
 const SeekerMainPage: React.FC = () => {
@@ -11,6 +12,8 @@ const SeekerMainPage: React.FC = () => {
       <IonContent>
         <WelcomeCart />
         <CvBoxComponent />
+
+        <RecommendationJobsCart />
       </IonContent>
     </IonPage>
   );
