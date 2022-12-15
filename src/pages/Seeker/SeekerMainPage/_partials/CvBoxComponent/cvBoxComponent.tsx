@@ -14,6 +14,14 @@ const CvBoxComponent: React.FC = () => {
             <div className="cv-icon"></div>
           </div>
         </div>
+
+        <div className="container">
+          <div className="isNoCv">
+            <div className="title">CV'in hala güncel mi ?</div>
+            <div className="btn">Hemen Güncelle</div>
+            <div className="cv-icon"></div>
+          </div>
+        </div>
       </IonContent>
     </IonPage>
   );
