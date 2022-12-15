@@ -31,6 +31,39 @@
         height: 50px;
         width: 50px;
       }
+
+      .day-icon {
+        background-image: url("./../../../../../img/day.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        height: 50px;
+        width: 50px;
+      }
+
+      .evening-icon {
+        background-image: url("./../../../../../img/evening.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        height: 50px;
+        width: 50px;
+      }
+
+      .night-icon {
+        background-image: url("./../../../../../img/night.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        height: 50px;
+        width: 50px;
+      }
     }
   }
 }
