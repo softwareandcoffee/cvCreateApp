@@ -34,23 +34,44 @@
     background-color: #ffffff;
   }
 
-  .searcher,
-  .employee {
+  .searcher  {
     .link-text {
-      display: flex;
-      width: 200px;
-      height: 45px;
-      border: 1px solid;
-      margin: 10px;
-      border-radius: 5px;
-      font-family: "Roboto-Medium";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      color: #000c09;
-      text-decoration: none;
-      justify-content: center;
-      align-items: center;
+        background-color: #12ce8f;
+        border-color: #12ce8f;
+        color: #ffffff;
     }
   }
+
+
+  .employee {
+    .link-text {
+        background-color: transparent;
+        border-color: #ffff;
+        color: #fff;
+    }  
+    
+  }
+
+
+
+  .link-text {
+    display: flex;
+    width: 200px;
+    height: 45px;
+    border: 1px solid;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: "Roboto-Medium";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
+
+
+
+
