@@ -1,6 +1,6 @@
 import { IonContent, IonPage, IonImg, IonIcon } from "@ionic/react";
 import React from "react";
-import { searchOutline } from 'ionicons/icons';
+import { searchOutline } from "ionicons/icons";
 
 import "./recommendationJobsCart.scss";
 
@@ -40,6 +40,7 @@ const RecommendationJobsCart: React.FC = () => {
 
   return (
     <div className="RecommendationJobsCart">
+      <div className="recommendation-title">Öneriler</div>
       <div className="container">
         {recomendation_jobs_list.map((job) => (
           <div className="recomendation-list">
