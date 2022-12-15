@@ -14,7 +14,7 @@ const Home: React.FC = () => {
                 <div className="first-text">Eleman mı arıyorsun?</div>
                 <div className="second-text">Ücretsiz ilan yayınla</div>
                 <Link to="/seekerAuth" className="link-text">
-                  İş Veren
+                  Eleman Arıyorum
                 </Link>
               </div>
             </IonCol>
