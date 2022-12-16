@@ -7,17 +7,25 @@ import {
   IonItem,
   IonInfiniteScrollContent,
   IonRippleEffect,
+  IonImg,
 } from "@ionic/react";
 
 import "./SeekerLogin.scss";
 import { useHistory } from "react-router-dom";
 
 const SeekerLogin: React.FC = () => {
-
   const history = useHistory();
   return (
-    <IonPage className="SeekerRegisterPage">
-      <IonContent>
+    <IonPage>
+      <IonContent className="SeekerLoginPage">
+        <div className="login-img">
+          <IonImg src="assets/candidate.png" class="img"></IonImg>
+        </div>
+        <div className="login-text-container">
+          <div className="text-login">Giriş yap</div>
+          <div className="text-login-second">Hemen giriş yap CV'ni oluştur</div>
+        </div>
+
         <IonInfiniteScrollContent>
           <IonList>
             <IonItem class="custom-item">
@@ -38,7 +46,21 @@ const SeekerLogin: React.FC = () => {
         </IonInfiniteScrollContent>
 
         <div className="button-container">
-          <div className="lgn-btn" onClick={() => history.push('/seekerMainPage')}>Giriş Yap</div>
+          <div
+            className="lgn-btn"
+            onClick={() => history.push("/seekerMainPage")}
+          >
+            Giriş Yap
+          </div>
+        </div>
+
+        <div className="button-container">
+          <div
+            className="register-btn"
+            onClick={() => history.push("/seekerRegister")}
+          >
+            Kayıt Ol
+          </div>
         </div>
       </IonContent>
     </IonPage>

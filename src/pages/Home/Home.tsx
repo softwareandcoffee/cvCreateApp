@@ -15,11 +15,11 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent className="Home" fullscreen>
         <IonGrid style={{ height: "100%", padding: "0px" }}>
-          <IonRow style={{ height: "50%" }}>
+          <IonRow style={{ height: "100%" }}>
             <IonCol style={{ margin: "0px", padding: "0px" }}>
-              <div className="homeBox employee">
-                <div className="first-text">Eleman mı arıyorsun?</div>
-                <div className="second-text">Ücretsiz ilan yayınla</div>
+              <div className="homeBox">
+                <div className="first-text">CV'ye mi ihtiyacın var ?</div>
+                <div className="second-text">Hemen CV oluştur, sana uygun işi hemen bul</div>
                 <Route
                   render={({ history }) => (
                     <IonButton
@@ -28,27 +28,7 @@ const Home: React.FC = () => {
                       }}
                       className="link-text"
                     >
-                      Eleman Arıyorum
-                    </IonButton>
-                  )}
-                />
-              </div>
-            </IonCol>
-          </IonRow>
-          <IonRow style={{ height: "50%" }}>
-            <IonCol style={{ margin: "0px", padding: "0px" }}>
-              <div className="homeBox searcher">
-                <div className="first-text">İş mi arıyorsun?</div>
-                <div className="second-text">Sana uygun işi hemen bul</div>
-                <Route
-                  render={({ history }) => (
-                    <IonButton
-                      onClick={() => {
-                        history.push("/seekerAuth");
-                      }}
-                      className="link-text"
-                    >
-                      İş Arıyorum
+                      Başla
                     </IonButton>
                   )}
                 />

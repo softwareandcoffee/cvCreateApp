@@ -1,30 +1,31 @@
 import {
   IonContent,
-  IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonInfiniteScrollContent,
+  IonImg,
 } from "@ionic/react";
 import "./SeekerRegister.scss";
 
-import {
-  IonButton,
-  IonLabel,
-  IonItem,
-  IonInput,
-  IonList,
-  IonRippleEffect,
-} from "@ionic/react";
-import { useState } from "react";
+import { IonButton, IonLabel, IonItem, IonInput, IonList } from "@ionic/react";
+
+import { useHistory } from "react-router-dom";
 
 const SeekerRegister: React.FC = () => {
-  const [click, setClick] = useState(false);
+  const history = useHistory();
 
   return (
     <IonPage className="SeekerRegister">
       <IonContent>
         <IonInfiniteScrollContent>
+          <div className="login-img">
+            <IonImg src="assets/candidate.png" class="img"></IonImg>
+          </div>
+          <div className="login-text-container">
+            <div className="text-login">Kayıt ol</div>
+            <div className="text-login-second">
+              Hemen kayıt ol CV'ni oluştur
+            </div>
+          </div>
           <IonList lines="full">
             <IonItem class="custom-item">
               <IonLabel position="stacked" className="label">
@@ -49,10 +50,22 @@ const SeekerRegister: React.FC = () => {
           </IonList>
         </IonInfiniteScrollContent>
 
-        <div className="btn-container">
-          <IonButton shape="round" className="btn-next">
-            Devam
-          </IonButton>
+        <div className="button-container">
+          <div
+            className="lgn-btn"
+            onClick={() => history.push("/seekerMainPage")}
+          >
+            Tamamla
+          </div>
+        </div>
+
+        <div className="button-container">
+          <div
+            className="register-btn"
+            onClick={() => history.push("/seekerLogin")}
+          >
+            Zaten bir hesabım var
+          </div>
         </div>
       </IonContent>
     </IonPage>

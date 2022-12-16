@@ -1,33 +1,76 @@
+.SeekerLoginPage {
+  margin: 15px;
+  display: flex;
+  text-align: center;
+  .login-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 50px;
+
+    .img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .login-text-container {
+    .text-login {
+      font-size: 24px;
+      font-weight: 600;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .text-login-second {
+      font-size: 16px;
+      font-weight: 500;
+      color: gray;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 .button-container {
   width: 100%;
-  height: 60px;
+  height: 50px;
   padding: 10px;
-}   
 
-.lgn-btn {
-  height: 40px;
-  left: 10px;
-  right: 10px;
+  .register-btn {
+    height: 40px;
+    border-radius: 15px;
+    border: 1px solid #12ce8f;
+    color: #12ce8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-  background-color: #12ce8f;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .lgn-btn {
+    height: 40px;
+    left: 10px;
+    right: 10px;
+    color: #fff;
+    background-color: #12ce8f;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .custom-item {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #12ce8f;
-    border-radius: 10px;
-    left: 10px;
-    width: 94%;
-    height: 62px;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #12ce8f;
+  border-radius: 10px;
+  left: 10px;
+  width: 94%;
+  height: 62px;
+  margin-bottom: 10px;
+}
 
-  .item-inner {
-    border-bottom: none;
-  }
-
+.item-inner {
+  border-bottom: none;
+}

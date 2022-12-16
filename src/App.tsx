@@ -21,16 +21,11 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 
 //Seeker
-import SeekerLogin from "./pages/Seeker/Auth/Login/SeekerLogin";
 import SeekerRegister from "./pages/Seeker/Auth/Register/SeekerRegister";
-
-//Employer
-import EmployerLogin from "./pages/Employer/Auth/Login/EmployerLogin";
-import EmployerRegister from "./pages/Employer/Auth/Register/EmployerRegister";
 
 //Home
 import Home from "./pages/Home/Home";
-import SeekerAuth from "./pages/Seeker/Auth";
+import SeekerLogin from "./pages/Seeker/Auth/Login/SeekerLogin";
 import SeekerMainPage from "./pages/Seeker/SeekerMainPage/SeekerMainPage";
 import Profile from "./pages/Profile/Profile";
 import CreateCv from "./pages/Seeker/CreateCv/CreateCv";
@@ -44,20 +39,11 @@ const App: React.FC = () => (
         <Route exact path="/Home">
           <Home />
         </Route>
-        <Route exact path="/seekerAuth">
-          <SeekerAuth />
-        </Route>
-        <Route exact path="/seekerLogin">
+        <Route exact path="/SeekerLogin">
           <SeekerLogin />
         </Route>
         <Route exact path="/seekerRegister">
           <SeekerRegister />
-        </Route>
-        <Route exact path="/EmployerLogin">
-          <EmployerLogin />
-        </Route>
-        <Route exact path="/EmployerRegister">
-          <EmployerRegister />
         </Route>
         <Route exact path="/seekerMainPage">
           <SeekerMainPage />

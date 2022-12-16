@@ -22,6 +22,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #12ce8f;
 
     span {
       font-weight: 600;
@@ -29,31 +30,21 @@
     }
   }
 
-  .employee {
-    background-color: #12ce8f;
-  }
   .searcher {
-    background-color: #ffffff;
-  }
-
-  .searcher  {
     .link-text {
-        background-color: #12ce8f;
-        border-color: #12ce8f;
-        color: #ffffff;
+      background-color: #12ce8f;
+      border-color: #12ce8f;
+      color: #ffffff;
     }
   }
 
-
   .employee {
     .link-text {
-        background-color: transparent;
-        border-color: #ffff;
-        color: #fff;
-    }  
+      background-color: transparent;
+      border-color: #ffff;
+      color: #fff;
+    }
   }
-
-
 
   .link-text {
     display: flex;
@@ -71,8 +62,3 @@
     align-items: center;
   }
 }
-
-
-
-
-
