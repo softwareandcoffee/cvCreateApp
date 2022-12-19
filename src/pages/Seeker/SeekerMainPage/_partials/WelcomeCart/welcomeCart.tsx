@@ -1,15 +1,16 @@
-import { IonContent, IonPage } from "@ionic/react";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { getWelcomeMessage } from "../../../../../helpers/wel-cart";
 
 import "./welcomeCart.scss";
 
 const WelcomeCart: React.FC = () => {
   const [welcartType, setWelcartType] = useState("morning");
-
+  // Store States
+  const loginState = useSelector((state: any) => state?.auth?.user);
   useEffect(() => {
     const res: any = getWelcomeMessage();
-    console.log('res: ', res);
+    console.log("res: ", res);
     setWelcartType(res?.type);
   }, []);
 
@@ -19,7 +20,7 @@ const WelcomeCart: React.FC = () => {
         <div className="cart">
           {welcartType === "morning" ? (
             <>
-              <div className="title">Günaydın, Sena Nur Ertürk.</div>
+              <div className="title">Günaydın, {loginState?.username}.</div>
               <div className="btn">Bugün Nasılsın ?</div>
               <div className="morning-icon"></div>{" "}
             </>
@@ -29,7 +30,7 @@ const WelcomeCart: React.FC = () => {
 
           {welcartType === "day" ? (
             <>
-              <div className="title">İyi günler, Sena Nur Ertürk.</div>
+              <div className="title">İyi günler, {loginState?.username}.</div>
               <div className="btn">Bugün Nasılsın ?</div>
               <div className="day-icon"></div>{" "}
             </>
@@ -39,7 +40,7 @@ const WelcomeCart: React.FC = () => {
 
           {welcartType === "evening" ? (
             <>
-              <div className="title">İyi Akşamlar, Sena Nur Ertürk.</div>
+              <div className="title">İyi Akşamlar, {loginState?.username}.</div>
               <div className="btn">Bugün Nasılsın ?</div>
               <div className="evening-icon"></div>{" "}
             </>
@@ -49,7 +50,7 @@ const WelcomeCart: React.FC = () => {
 
           {welcartType === "night" ? (
             <>
-              <div className="title">İyi Geceler, Sena Nur Ertürk.</div>
+              <div className="title">İyi Geceler, {loginState?.username}.</div>
               <div className="btn">Bugün Nasılsın ?</div>
               <div className="night-icon"></div>{" "}
             </>

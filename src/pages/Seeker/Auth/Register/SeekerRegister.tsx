@@ -9,9 +9,32 @@ import "./SeekerRegister.scss";
 import { IonButton, IonLabel, IonItem, IonInput, IonList } from "@ionic/react";
 
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../../../../actions/auth";
 
 const SeekerRegister: React.FC = () => {
   const history = useHistory();
+  const dispatch: any = useDispatch();
+  const [email, setStateEmail] = useState<any>();
+  const [pass, setStatePass] = useState<any>();
+  const [name, setStateUsername] = useState<any>();
+
+  const handleRegister = () => {
+    dispatch(
+      register(
+        name?.target?.value,
+        email?.target?.value,
+        pass?.target?.value,
+        2
+      )
+    )
+      .then(() => {
+        history.push("/seekerLogin");
+        //window.location.reload();
+      })
+      .catch(() => {});
+  };
 
   return (
     <IonPage className="SeekerRegister">
@@ -31,30 +54,30 @@ const SeekerRegister: React.FC = () => {
               <IonLabel position="stacked" className="label">
                 İsim
               </IonLabel>
-              <IonInput></IonInput>
-            </IonItem>
-
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Soyisim</IonLabel>
-              <IonInput></IonInput>
+              <IonInput
+                onIonInput={(event: any) => setStateUsername(event)}
+              ></IonInput>
             </IonItem>
 
             <IonItem class="custom-item">
               <IonLabel position="stacked">Email</IonLabel>
-              <IonInput type="email"></IonInput>
+              <IonInput
+                onIonInput={(event: any) => setStateEmail(event)}
+                type="email"
+              ></IonInput>
             </IonItem>
             <IonItem class="custom-item">
               <IonLabel position="stacked"> Şifre </IonLabel>
-              <IonInput type="password"></IonInput>
+              <IonInput
+                type="password"
+                onIonInput={(event: any) => setStatePass(event)}
+              ></IonInput>
             </IonItem>
           </IonList>
         </IonInfiniteScrollContent>
 
         <div className="button-container">
-          <div
-            className="lgn-btn"
-            onClick={() => history.push("/seekerMainPage")}
-          >
+          <div className="lgn-btn" onClick={handleRegister}>
             Tamamla
           </div>
         </div>

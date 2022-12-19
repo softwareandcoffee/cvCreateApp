@@ -29,36 +29,40 @@ import SeekerLogin from "./pages/Seeker/Auth/Login/SeekerLogin";
 import SeekerMainPage from "./pages/Seeker/SeekerMainPage/SeekerMainPage";
 import Profile from "./pages/Profile/Profile";
 import CreateCv from "./pages/Seeker/CreateCv/CreateCv";
+import { Provider } from "react-redux";
+import store from "./store";
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/Home">
-          <Home />
-        </Route>
-        <Route exact path="/SeekerLogin">
-          <SeekerLogin />
-        </Route>
-        <Route exact path="/seekerRegister">
-          <SeekerRegister />
-        </Route>
-        <Route exact path="/seekerMainPage">
-          <SeekerMainPage />
-        </Route>
-        <Route exact path="/Profile">
-          <Profile />
-        </Route>
-        <Route exact path="/Cv">
-          <CreateCv />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/Home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <Provider store={store}>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/Home">
+            <Home />
+          </Route>
+          <Route exact path="/SeekerLogin">
+            <SeekerLogin />
+          </Route>
+          <Route exact path="/seekerRegister">
+            <SeekerRegister />
+          </Route>
+          <Route exact path="/seekerMainPage">
+            <SeekerMainPage />
+          </Route>
+          <Route exact path="/Profile">
+            <Profile />
+          </Route>
+          <Route exact path="/Cv">
+            <CreateCv />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/Home" />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </Provider>
   </IonApp>
 );
 

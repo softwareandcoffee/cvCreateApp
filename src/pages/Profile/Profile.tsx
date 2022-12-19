@@ -11,9 +11,19 @@ import React from "react";
 import Header from "../../layouts/Header/Header";
 import { useHistory } from "react-router-dom";
 import "./Profile.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/auth";
 
 const Profile: React.FC = () => {
   const history = useHistory();
+  const dispatch: any = useDispatch();
+
+  const loginState = useSelector((state: any) => state?.auth?.user);
+
+  const logoutHandle = () => {
+    dispatch(logout());
+    history.push("/Home");
+  };
   return (
     <IonPage className="Profile">
       <IonHeader>
@@ -22,7 +32,11 @@ const Profile: React.FC = () => {
       <IonContent class="content">
         <IonItem>
           <IonLabel>Kullanıcı Adı</IonLabel>
-          <IonLabel>Mehmet Dilmen</IonLabel>
+          <IonLabel>{loginState?.username}</IonLabel>
+        </IonItem>
+        <IonItem>
+          <IonLabel>E-Posta</IonLabel>
+          <IonLabel>{loginState?.email}</IonLabel>
         </IonItem>
         <IonItem>
           <IonLabel>Dark Mode</IonLabel>
@@ -30,7 +44,9 @@ const Profile: React.FC = () => {
         </IonItem>
 
         <div className="btn-area">
-          <div className="logout-btn" onClick={()=>history.push('/SeekerAuth')}>Çıkış</div>
+          <div className="logout-btn" onClick={logoutHandle}>
+            Çıkış
+          </div>
         </div>
       </IonContent>
 

@@ -12,9 +12,24 @@ import {
 
 import "./SeekerLogin.scss";
 import { useHistory } from "react-router-dom";
+import { login } from "../../../../actions/auth";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 const SeekerLogin: React.FC = () => {
   const history = useHistory();
+  const dispatch: any = useDispatch();
+  const [email, setStateEmail] = useState<any>();
+  const [pass, setStatePass] = useState<any>();
+
+  const loginHandle = () => {
+    dispatch(login(email?.target?.value, pass?.target?.value))
+      .then(() => {
+        history.push("/seekerMainPage");
+        //window.location.reload();
+      })
+      .catch(() => {});
+  };
   return (
     <IonPage>
       <IonContent className="SeekerLoginPage">
@@ -30,13 +45,19 @@ const SeekerLogin: React.FC = () => {
           <IonList>
             <IonItem class="custom-item">
               <IonLabel position="stacked">Email </IonLabel>
-              <IonInput type="email"></IonInput>
+              <IonInput
+                type="email"
+                onIonInput={(event: any) => setStateEmail(event)}
+              ></IonInput>
             </IonItem>
 
             <IonItem class="custom-item">
               <IonLabel position="stacked">Şifre</IonLabel>
 
-              <IonInput type="password"></IonInput>
+              <IonInput
+                type="password"
+                onIonInput={(event: any) => setStatePass(event)}
+              ></IonInput>
             </IonItem>
 
             <div className="ion-activatable ripple-parent rounded-rectangle">
@@ -46,10 +67,7 @@ const SeekerLogin: React.FC = () => {
         </IonInfiniteScrollContent>
 
         <div className="button-container">
-          <div
-            className="lgn-btn"
-            onClick={() => history.push("/seekerMainPage")}
-          >
+          <div className="lgn-btn" onClick={loginHandle}>
             Giriş Yap
           </div>
         </div>

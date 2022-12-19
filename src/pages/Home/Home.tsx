@@ -24,7 +24,7 @@ const Home: React.FC = () => {
                   render={({ history }) => (
                     <IonButton
                       onClick={() => {
-                        history.push("/seekerAuth");
+                        history.push("/SeekerLogin");
                       }}
                       className="link-text"
                     >
