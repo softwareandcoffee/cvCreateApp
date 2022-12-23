@@ -5,8 +5,10 @@ import {
   IonContent,
   IonPage,
   IonButton,
+  IonFooter,
 } from "@ionic/react";
 import { Link, Route } from "react-router-dom";
+import Footer from "../../layouts/Footer/Footer";
 
 import "./Home.scss";
 
@@ -37,6 +39,7 @@ const Home: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
+     
     </IonPage>
   );
 };

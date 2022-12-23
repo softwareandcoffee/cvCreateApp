@@ -31,6 +31,8 @@ import Profile from "./pages/Profile/Profile";
 import CreateCv from "./pages/Seeker/CreateCv/CreateCv";
 import { Provider } from "react-redux";
 import store from "./store";
+import UpdateCv from "./pages/Seeker/CreateCv/UpdateCv";
+
 
 setupIonicReact();
 
@@ -54,9 +56,13 @@ const App: React.FC = () => (
           <Route exact path="/Profile">
             <Profile />
           </Route>
-          <Route exact path="/Cv">
+          <Route exact path="/CvCreate">
             <CreateCv />
           </Route>
+          <Route exact path="/CvUpdate">
+            <UpdateCv />
+          </Route>
+        
           <Route exact path="/">
             <Redirect to="/Home" />
           </Route>

@@ -1,6 +1,7 @@
-import { IonContent, IonHeader, IonPage } from "@ionic/react";
+import { IonContent, IonFooter, IonHeader, IonPage } from "@ionic/react";
 import React from "react";
 import { useSelector } from "react-redux";
+import Footer from "../../../layouts/Footer/Footer";
 import Header from "../../../layouts/Header/Header";
 
 import "./SeekerMainPage.scss";
@@ -16,16 +17,21 @@ const SeekerMainPage: React.FC = () => {
   );
   console.log('login: ', loginState)
   return (
-    <IonPage className="SeekerMainPage">
+    <IonPage  className="SeekerMainPage">
       <IonHeader>
         <Header />
       </IonHeader>
-      <IonContent>
+      <IonContent fullscreen={true}>
         <WelcomeCart />
         <CvBoxComponent />
 
         <RecommendationJobsCart />
       </IonContent>
+     <IonFooter translucent={true}>
+     <Footer/>
+     </IonFooter>
+       
+     
     </IonPage>
   );
 };

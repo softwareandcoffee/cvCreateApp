@@ -2,14 +2,14 @@
   height: 100%;
 
   .first-text {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #000c09;
     margin-bottom: 5px;
   }
 
   .second-text {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 200;
     color: #000c09;
     margin-bottom: 5px;
@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     background-color: #12ce8f;
-
+    background-image: url("../../img/background.png");
     span {
       font-weight: 600;
       color: #6b9080;
