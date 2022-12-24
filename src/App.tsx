@@ -28,11 +28,17 @@ import Home from "./pages/Home/Home";
 import SeekerLogin from "./pages/Seeker/Auth/Login/SeekerLogin";
 import SeekerMainPage from "./pages/Seeker/SeekerMainPage/SeekerMainPage";
 import Profile from "./pages/Profile/Profile";
-import CreateCv from "./pages/Seeker/CreateCv/CreateCv";
 import { Provider } from "react-redux";
 import store from "./store";
-import UpdateCv from "./pages/Seeker/CreateCv/UpdateCv";
-
+import AboutForm from "./pages/Seeker/CV/AboutForm/AboutForm";
+import EducationsForm from "./pages/Seeker/CV/EducationsForm/EducationsForm";
+import ExperienceForm from "./pages/Seeker/CV/ExperienceForm/ExperienceForm";
+import InterestsForm from "./pages/Seeker/CV/InterestsForm/InterestsForm";
+import MainForm from "./pages/Seeker/CV/MainForm/MainForm";
+import MenuCart from "./pages/Seeker/CV/Menu/MenuCart";
+import ReferanceForm from "./pages/Seeker/CV/ReferanceForm/ReferanceForm";
+import SkillsForm from "./pages/Seeker/CV/SkillsForm/SkillsForm";
+import HobiesForm from "./pages/Seeker/CV/HobiesForm/HobiesForm";
 
 setupIonicReact();
 
@@ -56,13 +62,35 @@ const App: React.FC = () => (
           <Route exact path="/Profile">
             <Profile />
           </Route>
-          <Route exact path="/CvCreate">
-            <CreateCv />
+          <Route exact path="/AboutForm">
+            <AboutForm />
           </Route>
-          <Route exact path="/CvUpdate">
-            <UpdateCv />
+          <Route exact path="/EducationsForm">
+            <EducationsForm />
           </Route>
-        
+          <Route exact path="/ExperienceForm">
+            <ExperienceForm />
+          </Route>
+          <Route exact path="/InterestsForm">
+            <InterestsForm />
+          </Route>
+          <Route exact path="/MainForm">
+            <MainForm />
+          </Route>
+          <Route exact path="/MenuCart">
+            <MenuCart />
+          </Route>
+          <Route exact path="/ReferanceForm">
+            <ReferanceForm />
+          </Route>
+          <Route exact path="/SkillsForm">
+            <SkillsForm />
+          </Route>
+          <Route exact path="/HobiesForm">
+            <HobiesForm />
+          </Route>
+          
+
           <Route exact path="/">
             <Redirect to="/Home" />
           </Route>

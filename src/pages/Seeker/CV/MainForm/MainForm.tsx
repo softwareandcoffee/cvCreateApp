@@ -4,7 +4,7 @@ import {
   IonPage,
   IonInfiniteScrollContent,
 } from "@ionic/react";
-import "./CreateCv.scss";
+import "./MainForm.scss";
 import {
   IonButton,
   IonLabel,
@@ -16,24 +16,20 @@ import {
   IonRippleEffect,
 } from "@ionic/react";
 import { useState } from "react";
-import Header from "../../../layouts/Header/Header";
+import Header from "../../../../layouts/Header/Header";
 
-
-const CreateCv: React.FC = () => {
+const MainForm: React.FC = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [click, setClick] = useState(false);
 
   return (
     <IonPage className="SeekerRegisterPage">
-      
-    
-   <IonContent>
-            <IonHeader collapse="condense">
+      <IonContent>
+        <IonHeader collapse="condense">
           <Header />
-       
         </IonHeader>
-     
-     <IonList>
+
+        <IonList>
           <IonItem class="custom-item">
             <IonLabel position="stacked">İsim</IonLabel>
             <IonInput></IonInput>
@@ -95,17 +91,17 @@ const CreateCv: React.FC = () => {
           ) : (
             click
           )}
-        </IonList> 
+        </IonList>
         <IonInfiniteScrollContent></IonInfiniteScrollContent>
       </IonContent>
       <div className="buttonCont">
         <IonButton shape="round" expand="block">
           Devam
         </IonButton>
-      </div> 
+      </div>
       <IonLabel>Syfa</IonLabel>
     </IonPage>
   );
 };
 
-export default CreateCv;
+export default MainForm;

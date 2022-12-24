@@ -14,7 +14,7 @@ const CvBoxComponent: React.FC = () => {
         <div className="container">
           <div className="isNoCv">
             <div className="title">Henüz bir cv oluşturmadın.</div>
-            <div className="btn" onClick={() => history.push("/CvCreate")}>
+            <div className="btn" onClick={() => history.push("/MenuCart")}>
               Hemen Oluştur
             </div>
             <div className="cv-icon"></div>
@@ -24,7 +24,7 @@ const CvBoxComponent: React.FC = () => {
         <div className="container">
           <div className="isNoCv">
             <div className="title">CV'in hala güncel mi ?</div>
-            <div className="btn" onClick={() => history.push("/CvUpdate")}>
+            <div className="btn" onClick={() => history.push("/MenuCart")}>
               Hemen Güncelle
             </div>
             <div className="cv-icon"></div>

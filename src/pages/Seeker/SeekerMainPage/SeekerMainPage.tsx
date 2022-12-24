@@ -16,13 +16,10 @@ const SeekerMainPage: React.FC = () => {
   const dispatch: any = useDispatch();
 
   const loginState = useSelector((state: any) => state?.auth?.user);
-
-  console.log('****', loginState)
   useEffect(() => {
     dispatch(getUserCVFunc(loginState?.email));
   }, []);
 
-  console.log("login: ", loginState);
   return (
     <IonPage className="SeekerMainPage">
       <IonHeader>
@@ -34,9 +31,7 @@ const SeekerMainPage: React.FC = () => {
 
         <RecommendationJobsCart />
       </IonContent>
-      <IonFooter translucent={true}>
-        {/* <Footer /> */}
-      </IonFooter>
+      <IonFooter translucent={true}>{/* <Footer /> */}</IonFooter>
     </IonPage>
   );
 };
