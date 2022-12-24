@@ -49,7 +49,7 @@ export const register = (name, email, password, type) => (dispatch) => {
 export const login = (username, password) => (dispatch) => {
   return AuthService.login(username, password).then(
     (data) => {
-      var decoded = jwt_decode(data?.token);
+      const decoded = jwt_decode(data?.token);
 
       console.log("data: ", decoded);
       dispatch({

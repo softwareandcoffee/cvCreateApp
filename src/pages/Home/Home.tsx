@@ -4,11 +4,10 @@ import {
   IonRow,
   IonContent,
   IonPage,
-  IonButton,
-  IonFooter,
+  IonButton
 } from "@ionic/react";
-import { Link, Route } from "react-router-dom";
-import Footer from "../../layouts/Footer/Footer";
+
+import { Route } from "react-router-dom";
 
 import "./Home.scss";
 

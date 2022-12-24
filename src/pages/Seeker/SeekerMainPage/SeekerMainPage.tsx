@@ -1,6 +1,7 @@
 import { IonContent, IonFooter, IonHeader, IonPage } from "@ionic/react";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserCVFunc } from "../../../actions/cv";
 import Footer from "../../../layouts/Footer/Footer";
 import Header from "../../../layouts/Header/Header";
 
@@ -11,13 +12,19 @@ import WelcomeCart from "./_partials/WelcomeCart/welcomeCart";
 
 const SeekerMainPage: React.FC = () => {
   // Store States
-  const loginState = useSelector(
-    (state: any) =>
-      state?.auth?.user
-  );
-  console.log('login: ', loginState)
+
+  const dispatch: any = useDispatch();
+
+  const loginState = useSelector((state: any) => state?.auth?.user);
+
+  console.log('****', loginState)
+  useEffect(() => {
+    dispatch(getUserCVFunc(loginState?.email));
+  }, []);
+
+  console.log("login: ", loginState);
   return (
-    <IonPage  className="SeekerMainPage">
+    <IonPage className="SeekerMainPage">
       <IonHeader>
         <Header />
       </IonHeader>
@@ -27,11 +34,9 @@ const SeekerMainPage: React.FC = () => {
 
         <RecommendationJobsCart />
       </IonContent>
-     <IonFooter translucent={true}>
-     <Footer/>
-     </IonFooter>
-       
-     
+      <IonFooter translucent={true}>
+        {/* <Footer /> */}
+      </IonFooter>
     </IonPage>
   );
 };
