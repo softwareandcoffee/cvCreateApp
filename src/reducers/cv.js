@@ -1,24 +1,17 @@
-import { GET_CV_SUCCESS, GET_CV_FAIL } from "../actions/types";
+import { GET_CV_SUCCESS } from "../actions/types";
 
-const initialState = user
-  ? { isLoggedIn: true, user }
-  : { isLoggedIn: false, user: null };
+const cv = [];
+
+const initialState = cv;
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
-
+  console.log("payload: ", type, payload, state);
   switch (type) {
     case GET_CV_SUCCESS:
       return {
         ...state,
-        isFail: false,
-        userCV: payload.userCV,
-      };
-    case GET_CV_FAIL:
-      return {
-        ...state,
-        isFail: true,
-        user: null,
+        userCV: payload.userCV[0],
       };
     default:
       return state;

@@ -20,6 +20,7 @@
     align-items: center;
     justify-content: center;
     .left {
+      color: #fff;
       width: 50px;
       text-align: center;
     }
@@ -31,8 +32,13 @@
     }
 
     .right {
+      color: #fff;
       display: flex;
       width: 130px;
     }
+  }
+
+  .back-btn {
+    color: #fff;
   }
 }

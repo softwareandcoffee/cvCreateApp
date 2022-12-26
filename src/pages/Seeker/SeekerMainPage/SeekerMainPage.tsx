@@ -2,7 +2,6 @@ import { IonContent, IonFooter, IonHeader, IonPage } from "@ionic/react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserCVFunc } from "../../../actions/cv";
-import Footer from "../../../layouts/Footer/Footer";
 import Header from "../../../layouts/Header/Header";
 
 import "./SeekerMainPage.scss";
@@ -16,19 +15,18 @@ const SeekerMainPage: React.FC = () => {
   const dispatch: any = useDispatch();
 
   const loginState = useSelector((state: any) => state?.auth?.user);
-  useEffect(() => {
-    dispatch(getUserCVFunc(loginState?.email));
-  }, []);
+
+  //useEffect
+  dispatch(getUserCVFunc(loginState?.email));
 
   return (
     <IonPage className="SeekerMainPage">
       <IonHeader>
-        <Header />
+        <Header title="BenimCV" isHasBack={false} />
       </IonHeader>
       <IonContent fullscreen={true}>
         <WelcomeCart />
         <CvBoxComponent />
-
         <RecommendationJobsCart />
       </IonContent>
       <IonFooter translucent={true}>{/* <Footer /> */}</IonFooter>

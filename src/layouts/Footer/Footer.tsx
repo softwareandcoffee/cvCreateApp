@@ -22,7 +22,6 @@ const Footer: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="#" text=""></IonBackButton>
           </IonButtons>
-          <IonTitle className="text">CV APP</IonTitle>
         </IonToolbar>
       </IonToolbar>
     </div>

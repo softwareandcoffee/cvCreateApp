@@ -4,13 +4,11 @@ import {
 } from "./types";
 
 import AuthService from "../services/cv.service";
-import jwt_decode from "jwt-decode";
 
 export const getUserCVFunc = (username) => (dispatch) => {
   return AuthService.getUserCV(username).then(
     (data) => {
-
-      console.log("cv data: ", data);
+      console.log('getUserCVFunc: ', data)
       dispatch({
         type: GET_CV_SUCCESS,
         payload: {userCV: data},

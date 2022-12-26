@@ -3,15 +3,17 @@ import { IonContent, IonHeader, IonPage } from "@ionic/react";
 import "./MenuCart.scss";
 import { IonLabel, IonItem } from "@ionic/react";
 import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
 
 const MenuCart: React.FC = () => {
   const history = useHistory();
+  const isCvStates = useSelector((state: any) => state?.cv?.userCV);
 
   return (
     <IonPage>
       <IonContent>
         <IonHeader>
-          <Header />
+          <Header title={isCvStates ? "CV'ni Güncelle" : "Yeni Oluştur"} />
         </IonHeader>
         <IonItem onClick={() => history.push("/MainForm")}>
           <IonLabel>Temel Bilgiler</IonLabel>

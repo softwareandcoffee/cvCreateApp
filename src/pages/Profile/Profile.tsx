@@ -27,9 +27,9 @@ const Profile: React.FC = () => {
     history.push("/Home");
   };
   return (
-    <IonPage className="Profile" >
+    <IonPage className="Profile">
       <IonHeader>
-        <Header />
+        <Header title="Profil Bilgileri" />
       </IonHeader>
       <IonContent class="content" fullscreen={true}>
         <IonItem class="custom-item">
@@ -40,10 +40,10 @@ const Profile: React.FC = () => {
           <IonLabel>E-Posta</IonLabel>
           <IonLabel>{loginState?.email}</IonLabel>
         </IonItem>
-        <IonItem class="custom-item">
-          <IonLabel >Dark Mode</IonLabel>
+        {/* <IonItem class="custom-item">
+          <IonLabel>Dark Mode</IonLabel>
           <IonToggle slot="end" checked={false}></IonToggle>
-        </IonItem>
+        </IonItem> */}
 
         <div className="btn-area">
           <div className="logout-btn" onClick={logoutHandle}>
@@ -53,13 +53,8 @@ const Profile: React.FC = () => {
       </IonContent>
 
       <div className="version">
-        <div className="text">version 0.0.1</div>
+        <div className="text">Version 0.0.1</div>
       </div>
-      <IonFooter translucent={true}>
-     <Footer/>
-  
-
-     </IonFooter>
     </IonPage>
   );
 };

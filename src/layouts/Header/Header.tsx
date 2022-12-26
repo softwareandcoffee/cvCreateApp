@@ -1,11 +1,11 @@
-import { IonIcon } from "@ionic/react";
+import { IonBackButton, IonButtons, IonIcon, IonToolbar } from "@ionic/react";
 import React from "react";
-import { chevronBack, cloudDownload, personCircle } from "ionicons/icons";
+import { cloudDownload, personCircle } from "ionicons/icons";
 
 import "./Header.scss";
 import { useHistory } from "react-router-dom";
 
-const Header: React.FC = () => {
+const Header: any = ({ title, isHasBack = true }: any) => {
   const history = useHistory();
 
   return (
@@ -14,7 +14,20 @@ const Header: React.FC = () => {
         {/* <div className="left"> */}
         {/* <IonIcon icon={chevronBack} class="size"></IonIcon> */}
         {/* </div> */}
-        <div className="logo">BenimCV</div>
+
+        {isHasBack ? (
+          <IonButtons slot="start">
+            <IonBackButton
+              defaultHref="#"
+              text=""
+              className="back-btn"
+            ></IonBackButton>
+          </IonButtons>
+        ) : (
+          <></>
+        )}
+
+        <div className="logo">{title}</div>
         <div className="right">
           <IonIcon icon={cloudDownload} class="size"></IonIcon>
 

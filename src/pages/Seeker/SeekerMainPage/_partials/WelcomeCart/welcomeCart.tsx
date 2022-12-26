@@ -10,7 +10,6 @@ const WelcomeCart: React.FC = () => {
   const loginState = useSelector((state: any) => state?.auth?.user);
   useEffect(() => {
     const res: any = getWelcomeMessage();
-    console.log("res: ", res);
     setWelcartType(res?.type);
   }, []);
 
