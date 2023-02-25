@@ -1,5 +1,11 @@
 import Header from "../../../../layouts/Header/Header";
-import { IonContent, IonHeader, IonPage } from "@ionic/react";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTextarea,
+  IonLabel,
+} from "@ionic/react";
 import "./AboutForm.scss";
 import { useSelector } from "react-redux";
 
@@ -10,11 +16,14 @@ const AboutForm: any = () => {
     <IonPage>
       <IonContent>
         <IonHeader>
-          <Header
-            title={isCvStates ? "Güncelle" : "Yeni Oluştur"}
-          />
+          <Header title={isCvStates ? "*Hakkında" : " Hakkında"} />
         </IonHeader>
-        AboutForm
+
+        <IonTextarea
+          className="text-area"
+          placeholder="Kendinden bahset :)"
+          clearOnEdit={true}
+        ></IonTextarea>
       </IonContent>
     </IonPage>
   );
