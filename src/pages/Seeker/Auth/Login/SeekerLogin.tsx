@@ -43,16 +43,16 @@ const SeekerLogin: React.FC = () => {
 
         <IonInfiniteScrollContent>
           <IonList>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Email </IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Email </IonLabel>
               <IonInput
                 type="email"
                 onIonInput={(event: any) => setStateEmail(event)}
               ></IonInput>
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Şifre</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Şifre</IonLabel>
 
               <IonInput
                 type="password"

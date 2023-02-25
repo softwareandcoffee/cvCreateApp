@@ -32,15 +32,15 @@ const Profile: React.FC = () => {
         <Header title="Profil Bilgileri" />
       </IonHeader>
       <IonContent class="content" fullscreen={true}>
-        <IonItem class="custom-item">
+        <IonItem>
           <IonLabel>Kullanıcı Adı</IonLabel>
           <IonLabel>{loginState?.username}</IonLabel>
         </IonItem>
-        <IonItem class="custom-item">
+        <IonItem>
           <IonLabel>E-Posta</IonLabel>
           <IonLabel>{loginState?.email}</IonLabel>
         </IonItem>
-        {/* <IonItem class="custom-item">
+        {/* <IonItem>
           <IonLabel>Dark Mode</IonLabel>
           <IonToggle slot="end" checked={false}></IonToggle>
         </IonItem> */}

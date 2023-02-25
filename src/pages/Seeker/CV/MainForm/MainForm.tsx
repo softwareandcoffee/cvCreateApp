@@ -1,9 +1,4 @@
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonInfiniteScrollContent,
-} from "@ionic/react";
+import { IonContent, IonHeader, IonPage } from "@ionic/react";
 import "./MainForm.scss";
 import {
   IonButton,
@@ -13,7 +8,6 @@ import {
   IonList,
   IonSelect,
   IonSelectOption,
-  IonRippleEffect,
 } from "@ionic/react";
 import { useState } from "react";
 import Header from "../../../../layouts/Header/Header";
@@ -27,7 +21,6 @@ const MainForm: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -43,8 +36,8 @@ const MainForm: React.FC = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <IonList>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">İsim</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">İsim</IonLabel>
 
               <IonInput
                 value={isCvStates?.name}
@@ -53,8 +46,8 @@ const MainForm: React.FC = () => {
               {errors.name && <span>This field is required</span>}
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Soyisim</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Soyisim</IonLabel>
               <IonInput
                 value={isCvStates?.surname}
                 {...register("surname", { required: true })}
@@ -62,8 +55,8 @@ const MainForm: React.FC = () => {
               {errors.surname && <span>This field is required</span>}
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Email </IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Email </IonLabel>
               <IonInput
                 value={isCvStates?.email}
                 {...register("email", { required: true })}
@@ -72,8 +65,8 @@ const MainForm: React.FC = () => {
               {errors.email && <span>This field is required</span>}
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Adres</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Adres</IonLabel>
               <IonInput
                 value={isCvStates?.adres}
                 {...register("adres", { required: true })}
@@ -81,8 +74,8 @@ const MainForm: React.FC = () => {
               {errors.adres && <span>This field is required</span>}
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Telefon Numarası</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Telefon Numarası</IonLabel>
               <IonInput
                 type="tel"
                 value={isCvStates?.phone}
@@ -91,22 +84,22 @@ const MainForm: React.FC = () => {
               {errors.phone && <span>This field is required</span>}
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Sürücü Ehliyeti</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Sürücü Ehliyeti</IonLabel>
               <IonInput
                 value={isCvStates?.driverLicance}
                 {...register("driverLicance")}
               ></IonInput>
             </IonItem>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Medeni Durum</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Medeni Durum</IonLabel>
               <IonInput
                 value={isCvStates?.martialStatus}
                 {...register("martialStatus")}
               ></IonInput>
             </IonItem>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Cinsiyet</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Cinsiyet</IonLabel>
               <IonSelect
                 placeholder="Seçiniz"
                 selectedText={isCvStates?.gender}
@@ -116,8 +109,8 @@ const MainForm: React.FC = () => {
                 <IonSelectOption value="Kadın">Kadın</IonSelectOption>
               </IonSelect>
             </IonItem>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Doğum Tarihi</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Doğum Tarihi</IonLabel>
               <IonInput type="date" value={isCvStates?.birthday}></IonInput>
             </IonItem>
           </IonList>

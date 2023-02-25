@@ -50,7 +50,7 @@ const SeekerRegister: React.FC = () => {
             </div>
           </div>
           <IonList lines="full">
-            <IonItem class="custom-item">
+            <IonItem>
               <IonLabel position="stacked" className="label">
                 İsim
               </IonLabel>
@@ -59,15 +59,15 @@ const SeekerRegister: React.FC = () => {
               ></IonInput>
             </IonItem>
 
-            <IonItem class="custom-item">
-              <IonLabel position="stacked">Email</IonLabel>
+            <IonItem>
+              <IonLabel position="floating">Email</IonLabel>
               <IonInput
                 onIonInput={(event: any) => setStateEmail(event)}
                 type="email"
               ></IonInput>
             </IonItem>
-            <IonItem class="custom-item">
-              <IonLabel position="stacked"> Şifre </IonLabel>
+            <IonItem>
+              <IonLabel position="floating"> Şifre </IonLabel>
               <IonInput
                 type="password"
                 onIonInput={(event: any) => setStatePass(event)}
