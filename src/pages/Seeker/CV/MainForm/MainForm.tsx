@@ -18,11 +18,20 @@ import {
 import { useState } from "react";
 import Header from "../../../../layouts/Header/Header";
 import { useSelector } from "react-redux";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 const MainForm: React.FC = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [click, setClick] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit: any = (data: any) => console.log(data);
   const isCvStates = useSelector((state: any) => state?.cv?.userCV);
 
   return (
@@ -32,78 +41,94 @@ const MainForm: React.FC = () => {
           <Header title={isCvStates ? "Güncelle" : "Yeni Oluştur"} />
         </IonHeader>
 
-        <IonList>
-          <IonItem class="custom-item">
-            <IonLabel position="stacked">İsim</IonLabel>
-            <IonInput value={isCvStates?.name}></IonInput>
-          </IonItem>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <IonList>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">İsim</IonLabel>
 
-          <IonItem class="custom-item">
-            <IonLabel position="stacked">Soyisim</IonLabel>
-            <IonInput value={isCvStates?.surname}></IonInput>
-          </IonItem>
+              <IonInput
+                value={isCvStates?.name}
+                {...register("name", { required: true })}
+              ></IonInput>
+              {errors.name && <span>This field is required</span>}
+            </IonItem>
 
-          <IonItem class="custom-item">
-            <IonLabel position="stacked">Email </IonLabel>
-            <IonInput value={isCvStates?.email} type="email"></IonInput>
-          </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Soyisim</IonLabel>
+              <IonInput
+                value={isCvStates?.surname}
+                {...register("surname", { required: true })}
+              ></IonInput>
+              {errors.surname && <span>This field is required</span>}
+            </IonItem>
 
-          <IonItem class="custom-item">
-            <IonLabel position="stacked">Adres</IonLabel>
-            <IonInput value={isCvStates?.adres}></IonInput>
-          </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Email </IonLabel>
+              <IonInput
+                value={isCvStates?.email}
+                {...register("email", { required: true })}
+                type="email"
+              ></IonInput>
+              {errors.email && <span>This field is required</span>}
+            </IonItem>
 
-          <IonItem class="custom-item">
-            <IonLabel position="stacked">Telefon Numarası</IonLabel>
-            <IonInput type="tel" value={isCvStates?.phone}></IonInput>
-          </IonItem>
-          <div className="ion-activatable ripple-parent rounded-rectangle">
-            <IonRippleEffect></IonRippleEffect>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Adres</IonLabel>
+              <IonInput
+                value={isCvStates?.adres}
+                {...register("adres", { required: true })}
+              ></IonInput>
+              {errors.adres && <span>This field is required</span>}
+            </IonItem>
+
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Telefon Numarası</IonLabel>
+              <IonInput
+                type="tel"
+                value={isCvStates?.phone}
+                {...register("phone", { required: true })}
+              ></IonInput>
+              {errors.phone && <span>This field is required</span>}
+            </IonItem>
+
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Sürücü Ehliyeti</IonLabel>
+              <IonInput
+                value={isCvStates?.driverLicance}
+                {...register("driverLicance")}
+              ></IonInput>
+            </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Medeni Durum</IonLabel>
+              <IonInput
+                value={isCvStates?.martialStatus}
+                {...register("martialStatus")}
+              ></IonInput>
+            </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Cinsiyet</IonLabel>
+              <IonSelect
+                placeholder="Seçiniz"
+                selectedText={isCvStates?.gender}
+                {...register("gender")}
+              >
+                <IonSelectOption value="Erkek">Erkek</IonSelectOption>
+                <IonSelectOption value="Kadın">Kadın</IonSelectOption>
+              </IonSelect>
+            </IonItem>
+            <IonItem class="custom-item">
+              <IonLabel position="stacked">Doğum Tarihi</IonLabel>
+              <IonInput type="date" value={isCvStates?.birthday}></IonInput>
+            </IonItem>
+          </IonList>
+
+          <div className="buttonCont">
+            <IonButton shape="round" expand="block" type="submit">
+              {isCvStates ? "Güncelle" : "Kaydet"}
+            </IonButton>
           </div>
-
-          <IonButton
-            style={{ marginTop: "20px" }}
-            fill="outline"
-            expand="block"
-            onClick={() => setClick((click) => !click)}
-          >
-            + Ek Bilgiler
-          </IonButton>
-          {click ? (
-            <IonList>
-              <IonItem class="custom-item">
-                <IonLabel position="stacked">Sürücü Ehliyeti</IonLabel>
-                <IonInput value={isCvStates?.driverLicance}></IonInput>
-              </IonItem>
-              <IonItem class="custom-item">
-                <IonLabel position="stacked">Medeni Durum</IonLabel>
-                <IonInput value={isCvStates?.martialStatus}></IonInput>
-              </IonItem>
-              <IonItem class="custom-item">
-                <IonLabel position="stacked">Cinsiyet</IonLabel>
-                <IonSelect
-                  placeholder="Seçiniz"
-                  selectedText={isCvStates?.gender}
-                >
-                  <IonSelectOption value="Erkek">Erkek</IonSelectOption>
-                  <IonSelectOption value="Kadın">Kadın</IonSelectOption>
-                </IonSelect>
-              </IonItem>
-              <IonItem class="custom-item">
-                <IonLabel position="stacked">Doğum Tarihi</IonLabel>
-                <IonInput type="date" value={isCvStates?.birthday}></IonInput>
-              </IonItem>
-            </IonList>
-          ) : (
-            click
-          )}
-        </IonList>
+        </form>
       </IonContent>
-      <div className="buttonCont">
-        <IonButton shape="round" expand="block">
-          {isCvStates ? "Güncelle" : "Kaydet"}
-        </IonButton>
-      </div>
     </IonPage>
   );
 };
