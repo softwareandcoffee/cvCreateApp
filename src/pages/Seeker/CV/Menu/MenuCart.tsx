@@ -19,22 +19,22 @@ const MenuCart: React.FC = () => {
           <IonLabel>Temel Bilgiler</IonLabel>
         </IonItem>
         <IonItem onClick={() => history.push("/AboutForm")}>
-          <IonLabel>Hakkında</IonLabel>
+          <IonLabel>Açıklama</IonLabel>
+        </IonItem>
+        <IonItem onClick={() => history.push("/ExperienceForm")}>
+          <IonLabel>İş Deneyimi</IonLabel>
         </IonItem>
         <IonItem onClick={() => history.push("/EducationsForm")}>
           <IonLabel>Eğitim Bilgileri</IonLabel>
         </IonItem>
-        <IonItem onClick={() => history.push("/ExperienceForm")}>
-          <IonLabel>İş Bilgileri</IonLabel>
-        </IonItem>
         <IonItem onClick={() => history.push("/SkillsForm")}>
-          <IonLabel>Beceri Bilgiler</IonLabel>
+          <IonLabel>Beceriler</IonLabel>
         </IonItem>
         <IonItem onClick={() => history.push("/HobiesForm")}>
           <IonLabel>Hobiler</IonLabel>
         </IonItem>
         <IonItem onClick={() => history.push("/ReferanceForm")}>
-          <IonLabel>Referans Bilgileri</IonLabel>
+          <IonLabel>Referanslar</IonLabel>
         </IonItem>
       </IonContent>
     </IonPage>
