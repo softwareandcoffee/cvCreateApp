@@ -31,8 +31,8 @@ const AboutForm: any = () => {
         <IonItem>
           <IonTextarea
             placeholder="Kendinden Bahset"
-            value={isCvStates?.desc}
-            {...register("desc", { required: true })}
+            value={isCvStates?.description}
+            {...register("desc")}
           ></IonTextarea>
           {errors.desc && <span>Bu alan zorunludur.</span>}
         </IonItem>

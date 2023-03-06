@@ -26,7 +26,7 @@ const MainForm: React.FC = () => {
 
   const onSubmit: any = (data: any) => console.log(data);
   const isCvStates = useSelector((state: any) => state?.cv?.userCV);
-
+console.log(isCvStates)
   return (
     <IonPage className="SeekerRegisterPage">
       <IonContent>
